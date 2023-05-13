@@ -26,15 +26,7 @@
         }
     </script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.load("visualization", "1", { packages: ["corechart"] });
-    </script>
-    <script type="text/javascript">
-        google.load("visualization", "1", { packages: ["bar"] });
-        google.charts.load('current', { 'packages': ['line'] });
-        google.charts.load('current', { 'packages': ['table'] });
-    </script>
+    
 
     <title>Document</title>
 </head>
@@ -57,10 +49,11 @@
                         <a
                             href="./addmenu.php"
                             class="w-[120px] h-[45px] border rounded border-[white] p-[0.8rem] text-center text-gray-100 text-bold">
-                            About</a>
-                        <li
+                            Add Menu</a>
+                        <a 
+                        href="./orders.php"
                             class="w-[120px] h-[45px] border rounded border-[white] p-[0.8rem] text-center text-gray-100 text-bold">
-                            Contact</li>
+                            My Orders</a>
 
                     </ul>
                 </div>
@@ -84,3 +77,5 @@
                 </div>
             </div>
         </div>
+        <div class="mainpage flex-[9] bg-[whitesmoke] flex flex-col">
+            <div class="graphs bg-gray-300 flex-[9] m-[20px] p-[2rem] rounded-[1.45rem] shadow-lg">

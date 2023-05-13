@@ -10,5 +10,4 @@
         echo "connection error";
         die(mysqli_connect_error($connection));
     }
-    echo "Database connected successfully";
-?>
+    // echo "Database connected successfully";

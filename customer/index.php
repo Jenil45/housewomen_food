@@ -1,3 +1,2 @@
-<? php 
-
-?>
+<?php
+include './_navbar.php';

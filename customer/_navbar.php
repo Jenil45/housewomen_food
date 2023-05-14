@@ -1,3 +1,22 @@
+<?php
+
+session_start();
+$role = $_SESSION['role'];
+$loggedin = $_SESSION['loggedIn'];
+
+if (!isset($_SESSION['loggedIn']) && $loggedin == false) {
+    header('location:../');
+} else {
+    if ($role == 0) {
+        $login = true;
+    } else {
+        header('location:../');
+    }
+}
+// session_destroy();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,7 +60,7 @@
             <div class="container flex item-center justify-between mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-between">
                 <a href="./index.php" class="flex title-font  font-medium items-center justify-center text-gray-900 mb-4 md:mb-0">
                     <img src="../images/svg/logo.svg" class="w-[3.3rem]" alt="" srcset="">
-                    <span class="ml-3 text-xl">Mommy's Kitchen</span>
+                    <!-- <span class="ml-3 text-xl">Mommy's Kitchen</span> -->
                 </a>
 
                 <div class="relative mb-4 flex w-[35rem] flex-wrap items-stretch border p-2 bg-[white] gap-[0.7rem] shadow-lg rounded-[12px] ">
@@ -51,14 +70,18 @@
                     <input type="search" class="w-[30rem] border-0" placeholder="Search by kitchen , food item or place" aria-label="Search by kitchen , food item or place" aria-describedby="button-addon1" />
 
                 </div>
-                <div class="flex mb-4 w-[18rem]  flex-row gap-[0.4rem] items-center justify-center">
+                <div class="flex mb-4 w-[20rem]  flex-row gap-[0rem] items-center ">
                     <a href="./profile" class="flex-[1] w-[14rem] flex gap-[0.3rem] cursor-pointer">
-                        <img src="../images//svg//user.svg" class="h-[40px]" alt="" srcset="">
-                        <p class="text-bold h3 text-[25px] mb-1">Jenil</p>
+                        <img src="../images//svg//user.svg" class="h-[1.8rem]" alt="" srcset="">
+                        <p class="text-bold h3 text-[1.2rem] mb-1">Jenil</p>
                     </a>
                     <a href="./profile/cart.php" class="flex-[1] flex gap-[0.3rem] cursor-pointer">
-                        <img src="../images//svg//cart.svg" class="h-[40px]" alt="" srcset="">
-                        <p class="text-bold h3 text-[25px] mb-1">Cart</p>
+                        <img src="../images//svg//cart.svg" class="h-[1.8rem]" alt="" srcset="">
+                        <p class="text-bold h3 text-[1.2rem] mb-1">Cart</p>
+                    </a>
+                    <a href="./logout.php" class="flex-[1] flex gap-[0.3rem] cursor-pointer">
+                        <img src="../images//svg//logout.svg" class="h-[1.8rem]" alt="" srcset="">
+                        <p class="text-bold h3 text-[1.2rem] mb-1">LogOut</p>
                     </a>
                 </div>
             </div>

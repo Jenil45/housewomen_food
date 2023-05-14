@@ -1,3 +1,22 @@
+<?php
+
+session_start();
+$role = $_SESSION['role'];
+$loggedin = $_SESSION['loggedIn'];
+
+if (!isset($_SESSION['loggedIn']) && $loggedin == false) {
+    header('location:../');
+} else {
+    if ($role == 1) {
+        $login = true;
+    } else {
+        header('location:../');
+    }
+}
+
+// session_destroy();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 

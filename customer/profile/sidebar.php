@@ -1,3 +1,20 @@
+<?php
+
+session_start();
+$role = $_SESSION['role'];
+$loggedin = $_SESSION['loggedIn'];
+
+if (!isset($_SESSION['loggedIn']) && $loggedin == false) {
+    header('location:../');
+} else {
+    if ($role == 0) {
+        $login = true;
+    } else {
+        header('location:../../');
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,15 +32,15 @@
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-    tailwind.config = {
-        theme: {
-            extend: {
-                colors: {
-                    clifford: '#da373d',
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
                 }
             }
         }
-    }
     </script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
 
@@ -42,46 +59,36 @@
                 <div class="flex flex-col">
                     <ul class="flex flex-col items-center justify-center gap-[0.2rem] mt-[1rem]">
 
-                        <a href="./"
-                            class="h-[3rem] w-full border-0 hover:text-[black] gap-[0.8rem] border-l-[6px] border-[#BAA071] py-[0.4rem] hover:bg-[#EDE0C8]    hover:border-l-[#5f5a50] flex items-center justify-center text-center text-gray-100 text-bold">
+                        <a href="./" class="h-[3rem] w-full border-0 hover:text-[black] gap-[0.8rem] border-l-[6px] border-[#BAA071] py-[0.4rem] hover:bg-[#EDE0C8]    hover:border-l-[#5f5a50] flex items-center justify-center text-center text-gray-100 text-bold">
                             <div class="flex-[1] flex justify-end ">
-                                <img src="../../images/svg/user.svg" class=" w-[2rem] bg-[white] rounded-full p-1"
-                                    alt="">
+                                <img src="../../images/svg/user.svg" class=" w-[2rem] bg-[white] rounded-full p-1" alt="">
                             </div>
                             <span class="flex-[2] flex justify-start">My Profile</span>
                         </a>
 
-                        <a href="./editprofile.php"
-                            class="h-[3rem] w-full border-0 hover:text-[black] gap-[0.8rem] border-l-[6px] border-[#BAA071] py-[0.4rem] hover:bg-[#EDE0C8]    hover:border-l-[#5f5a50] flex items-center justify-center text-center text-gray-100 text-bold">
+                        <a href="./editprofile.php" class="h-[3rem] w-full border-0 hover:text-[black] gap-[0.8rem] border-l-[6px] border-[#BAA071] py-[0.4rem] hover:bg-[#EDE0C8]    hover:border-l-[#5f5a50] flex items-center justify-center text-center text-gray-100 text-bold">
                             <div class="flex-[1] flex justify-end ">
-                                <img src="../../images/svg/edit.svg" class=" w-[2rem] bg-[white] rounded-full p-1"
-                                    alt="">
+                                <img src="../../images/svg/edit.svg" class=" w-[2rem] bg-[white] rounded-full p-1" alt="">
                             </div>
                             <span class="flex-[2] flex justify-start">Edit Profile</span>
                         </a>
 
-                        <a href="./orderhistory.php"
-                            class="h-[3rem] w-full border-0 hover:text-[black] gap-[0.8rem] border-l-[6px] border-[#BAA071] py-[0.4rem] hover:bg-[#EDE0C8]    hover:border-l-[#5f5a50] flex items-center justify-center text-center text-gray-100 text-bold">
+                        <a href="./orderhistory.php" class="h-[3rem] w-full border-0 hover:text-[black] gap-[0.8rem] border-l-[6px] border-[#BAA071] py-[0.4rem] hover:bg-[#EDE0C8]    hover:border-l-[#5f5a50] flex items-center justify-center text-center text-gray-100 text-bold">
                             <div class="flex-[1] flex justify-end ">
-                                <img src="../../images/svg/history.svg" class=" w-[2rem] bg-[white] rounded-full p-1"
-                                    alt="">
+                                <img src="../../images/svg/history.svg" class=" w-[2rem] bg-[white] rounded-full p-1" alt="">
                             </div>
                             <span class="flex-[2] flex justify-start">Order History</span>
                         </a>
 
-                        <a href="./cart.php"
-                            class="h-[3rem] w-full border-0 hover:text-[black] gap-[0.8rem] border-l-[6px] border-[#BAA071] py-[0.4rem] hover:bg-[#EDE0C8]    hover:border-l-[#5f5a50] flex items-center justify-center text-center text-gray-100 text-bold">
+                        <a href="./cart.php" class="h-[3rem] w-full border-0 hover:text-[black] gap-[0.8rem] border-l-[6px] border-[#BAA071] py-[0.4rem] hover:bg-[#EDE0C8]    hover:border-l-[#5f5a50] flex items-center justify-center text-center text-gray-100 text-bold">
                             <div class="flex-[1] flex justify-end ">
-                                <img src="../../images/svg/cart.svg" class=" w-[2rem] bg-[white] rounded-full p-1"
-                                    alt="">
+                                <img src="../../images/svg/cart.svg" class=" w-[2rem] bg-[white] rounded-full p-1" alt="">
                             </div>
                             <span class="flex-[2] flex justify-start">My Cart</span>
                         </a>
-                        <a href="./"
-                            class="h-[3rem] w-full border-0 hover:text-[black] gap-[0.8rem] border-l-[6px] border-[#BAA071] py-[0.4rem] hover:bg-[#EDE0C8]    hover:border-l-[#5f5a50] flex items-center justify-center text-center text-gray-100 text-bold">
+                        <a href="./" class="h-[3rem] w-full border-0 hover:text-[black] gap-[0.8rem] border-l-[6px] border-[#BAA071] py-[0.4rem] hover:bg-[#EDE0C8]    hover:border-l-[#5f5a50] flex items-center justify-center text-center text-gray-100 text-bold">
                             <div class="flex-[1] flex justify-end ">
-                                <img src="../../images/svg/review.svg" class=" w-[2rem] bg-[white] rounded-full p-1"
-                                    alt="">
+                                <img src="../../images/svg/review.svg" class=" w-[2rem] bg-[white] rounded-full p-1" alt="">
                             </div>
                             <span class="flex-[2] flex justify-start">Reviews</span>
                         </a>
@@ -94,5 +101,4 @@
 
         </div>
         <div class="mainpage flex-[9]  flex flex-col">
-            <div
-                class="graphs bg-[#EDE0C8] flex-[9] h-[80%]  m-[20px] p-[2rem] overflow-y-scroll rounded-[1.45rem] shadow-lg">
+            <div class="graphs bg-[#EDE0C8] flex-[9] h-[80%]  m-[20px] p-[2rem] overflow-y-scroll rounded-[1.45rem] shadow-lg">

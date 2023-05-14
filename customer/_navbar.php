@@ -17,15 +17,15 @@
     }
   </style>
     <script>
-    tailwind.config = {
-        theme: {
-            extend: {
-                colors: {
-                    clifford: '#da373d',
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
                 }
             }
         }
-    }
     </script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -38,21 +38,17 @@
     <div id="text-[red]" class="text-[red]">
         <header class="text-gray-600 body-font">
 
-            <div
-                class="container flex item-center justify-between mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-between">
-                <a href="./index.php"
-                    class="flex title-font  font-medium items-center justify-center text-gray-900 mb-4 md:mb-0">
+            <div class="container flex item-center justify-between mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-between">
+                <a href="./index.php" class="flex title-font  font-medium items-center justify-center text-gray-900 mb-4 md:mb-0">
                     <img src="../images/svg/logo.svg" class="w-[3.3rem]" alt="" srcset="">
                     <span class="ml-3 text-xl">Mommy's Kitchen</span>
                 </a>
 
-                <div
-                    class="relative mb-4 flex w-[35rem] flex-wrap items-stretch border p-2 bg-[white] gap-[0.7rem] shadow-lg rounded-[12px] ">
+                <div class="relative mb-4 flex w-[35rem] flex-wrap items-stretch border p-2 bg-[white] gap-[0.7rem] shadow-lg rounded-[12px] ">
                     <span class="ml-1 rounded flex flex-col items-center justify-center w-[35px] ">
                         <img src="../images/svg/search.svg" class="w-[25px]" alt="" srcset="">
                     </span>
-                    <input type="search" class="w-[30rem] border-0" placeholder="Search by kitchen , food item or place"
-                        aria-label="Search by kitchen , food item or place" aria-describedby="button-addon1" />
+                    <input type="search" class="w-[30rem] border-0" placeholder="Search by kitchen , food item or place" aria-label="Search by kitchen , food item or place" aria-describedby="button-addon1" />
 
                 </div>
                 <div class="flex mb-4 w-[18rem]  flex-row gap-[0.4rem] items-center justify-center">
@@ -60,18 +56,17 @@
                         <img src="../images//svg//user.svg" class="h-[40px]" alt="" srcset="">
                         <p class="text-bold h3 text-[25px] mb-1">Jenil</p>
                     </a>
-                    <div class="flex-[1] flex gap-[0.3rem] cursor-pointer">
+                    <a href="./profile/cart.php" class="flex-[1] flex gap-[0.3rem] cursor-pointer">
                         <img src="../images//svg//cart.svg" class="h-[40px]" alt="" srcset="">
                         <p class="text-bold h3 text-[25px] mb-1">Cart</p>
-                    </div>
+                    </a>
                 </div>
             </div>
         </header>
         <div class="flex mx-[1rem] gap-[0.5rem] ">
             <a href="./">
 
-                <div
-                    class="card w-[15rem] h-[6rem] border-0 border-b-[2px] border-[red] p-4  flex gap-[1rem] items-center justify-center cursor-pointer">
+                <div class="card w-[15rem] h-[6rem] border-0 border-b-[2px] border-[red] p-4  flex gap-[1rem] items-center justify-center cursor-pointer">
                     <div class="bg-[wheat] rounded-full h-[60px] w-[60px] flex items-center justify-center">
                         <img src="../images/svg/user.svg" class="w-[60px]" alt="">
                     </div>
@@ -81,8 +76,7 @@
                 </div>
             </a>
             <a href="./place.php">
-                <div
-                    class="card w-[15rem] h-[6rem] border-0 border-b-[2px] border-[red] p-4  flex gap-[1rem] items-center justify-center cursor-pointer">
+                <div class="card w-[15rem] h-[6rem] border-0 border-b-[2px] border-[red] p-4  flex gap-[1rem] items-center justify-center cursor-pointer">
                     <div class="bg-[wheat] rounded-full h-[60px] w-[60px] flex items-center justify-center">
                         <img src="../images/svg/user.svg" class="w-[60px]" alt="">
                     </div>
@@ -92,8 +86,7 @@
                 </div>
             </a>
             <a href="./food.php">
-                <div
-                    class="card w-[15rem] h-[6rem] border-0 border-b-[2px] border-[red] p-4  flex gap-[1rem] items-center justify-center cursor-pointer">
+                <div class="card w-[15rem] h-[6rem] border-0 border-b-[2px] border-[red] p-4  flex gap-[1rem] items-center justify-center cursor-pointer">
                     <div class="bg-[wheat] rounded-full h-[60px] w-[60px] flex items-center justify-center">
                         <img src="../images/svg/user.svg" class="w-[60px]" alt="">
                     </div>

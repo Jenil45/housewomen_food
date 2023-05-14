@@ -38,15 +38,22 @@ include "./sidebar.php";
   }
 
   h1 {
-    color: #4caf50;
     text-font: 20px;
   }
+  #h1 {
+        font-size: xx-large;
+        background-color: red;
+
+      }
 </style>
 <body>
 <center>
 
-    <div>
+    <div id="h1" class="rounded-[6px] mb-6">
         <h1>Order Details</h1>
+        
+    </div>
+    <div>
     <table>
         <thead>
             <tr>
@@ -68,53 +75,14 @@ include "./sidebar.php";
                 <td>qwerty</td>
                 <td>qwerty</td>
                 <td>qwerty</td>
-                <td>qwerty</td>
+                <td><a href="./singleorder.php" class="text-black">
+
+                    qwerty
+                </a>
+            </td>
             </tr>
-            <tr>
-                <td>qwerty</td>
-                <td>qwerty</td>
-                <td>qwerty</td>
-                <td>qwerty</td>
-                <td>qwerty</td>
-                <td>qwerty</td>
-                <td>qwerty</td>
-            </tr>
-            <tr>
-                <td>qwerty</td>
-                <td>qwerty</td>
-                <td>qwerty</td>
-                <td>qwerty</td>
-                <td>qwerty</td>
-                <td>qwerty</td>
-                <td>qwerty</td>
-            </tr>
-            <tr>
-                <td>qwerty</td>
-                <td>qwerty</td>
-                <td>qwerty</td>
-                <td>qwerty</td>
-                <td>qwerty</td>
-                <td>qwerty</td>
-                <td>qwerty</td>
-            </tr>
-            <tr>
-                <td>qwerty</td>
-                <td>qwerty</td>
-                <td>qwerty</td>
-                <td>qwerty</td>
-                <td>qwerty</td>
-                <td>qwerty</td>
-                <td>qwerty</td>
-            </tr>
-            <tr>
-                <td>qwerty</td>
-                <td>qwerty</td>
-                <td>qwerty</td>
-                <td>qwerty</td>
-                <td>qwerty</td>
-                <td>qwerty</td>
-                <td>qwerty</td>
-            </tr>
+          
+
         </tbody>
         
     </table>

@@ -9,12 +9,14 @@ $cid = $row['customerid'];
 ?>
 
 <link rel="stylesheet" href="../css/style1.css">
-<?php
-$query = "SELECT * FROM food_order WHERE customerid=$cid";
-$query_result = mysqli_query($connection, $query);
+<div class="flex items-center justify-center flex-wrap gap-[1.2rem]">
 
-while ($row = mysqli_fetch_assoc($query_result)) {
-?>
+    <?php
+    $query = "SELECT * FROM food_order WHERE customerid=$cid";
+    $query_result = mysqli_query($connection, $query);
+
+    while ($row = mysqli_fetch_assoc($query_result)) {
+    ?>
 
     <div class="card bg-[white] shadow-xl p-2 rounded-[1.1rem] border w-[25rem] h-[18rem]">
         <div class="flex justify-between items-center border-0 border-b-[1px] border-[gray]">
@@ -26,16 +28,17 @@ while ($row = mysqli_fetch_assoc($query_result)) {
             </span> -->
             </div>
             <?php
-            if ($row['order_status'] == 0) {
-                echo "Pending";
-            } else {
-                echo "Delievered";
-            }
-            ?>
+                if ($row['order_status'] == 0) {
+                    echo "Pending";
+                } else {
+                    echo "Delievered";
+                }
+                ?>
         </div>
         <div class="p-4 flex flex-col gap-[0.7rem]">
             <div class="flex items-center justify-between">
-                <span class="text-[1.4rem]">Order Id : <span class="text-[1.2rem]"><?php echo $row['orderid'] ?></span></span>
+                <span class="text-[1.4rem]">Order Id : <span
+                        class="text-[1.2rem]"><?php echo $row['orderid'] ?></span></span>
 
             </div>
             <div class="flex items-center justify-between ">
@@ -48,11 +51,13 @@ while ($row = mysqli_fetch_assoc($query_result)) {
                     Order Date : <span class="text-[1.2rem]"><?php echo $row['order_date'] ?> </span>
                 </span>
             </div>
-            <a href="./orders.php?oid=<?php echo $row['orderid'] ?>">
+            <a href="./orders.php?oid=<?php echo $row['orderid'] ?>"
+                class="p-2 bg-[gray] text-[white] rounded-[0.6rem] border border-[white] hover:border-[black] hover:bg-[transparent] hover:text-[black] w-[7rem]">
                 View More
             </a>
         </div>
     </div>
-<?php
-}
-?>
+    <?php
+    }
+    ?>
+</div>

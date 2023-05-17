@@ -15,11 +15,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // }
 
             // add new item in cart
-            $count = count($_SESSION['cart']);
-            print_r($_SESSION['cart']);
-            $_SESSION['cart'][$count] = array('foodid' => $_POST['foodid'], 'kid' => $_POST['kitchenid'], 'foodname' => $_POST['foodname'], 'price' => $_POST['amount'], 'qty' => $_POST['quantity']);
-            // print_r($_SESSION['cart']);
-            header('location:../');
+            if ($_POST['kitchenid'] == $_SESSION['cart'][0]['kid']) {
+
+                $count = count($_SESSION['cart']);
+                print_r($_SESSION['cart']);
+                $_SESSION['cart'][$count] = array('foodid' => $_POST['foodid'], 'kid' => $_POST['kitchenid'], 'foodname' => $_POST['foodname'], 'price' => $_POST['amount'], 'qty' => $_POST['quantity']);
+                // print_r($_SESSION['cart']);
+                header('location:../');
+            } else {
+                echo "<script>alert('Please select same kitchen')</script>";
+                header('location:../');
+            }
         } else {
 
             // add first item in cart

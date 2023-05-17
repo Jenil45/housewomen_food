@@ -19,20 +19,20 @@ $user = mysqli_fetch_assoc($result);
         $total = 0;
         if (isset($_SESSION['cart'])) {
         ?>
-            <table class=" p-2" border="1">
-                <thead>
-                    <tr>
-                        <th>Food Name</th>
-                        <th>Food Price</th>
-                        <th>Quantity</th>
-                        <th>Total Amount</th>
-                        <th>Remove</th>
-                    </tr>
-                </thead>
-                <tbody>
+        <table class=" p-2" border="1">
+            <thead>
+                <tr>
+                    <th>Food Name</th>
+                    <th>Food Price</th>
+                    <th>Quantity</th>
+                    <th>Total Amount</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
 
                 <?php
-                // print_r($_SESSION['cart']);
+                print_r($_SESSION['cart']);
                 foreach ($_SESSION['cart'] as $key => $value) {
                     $total_food = $value['price'] * $value['qty'];
                     $total = $total + $total_food;
@@ -54,8 +54,8 @@ $user = mysqli_fetch_assoc($result);
                 echo "<span class='text-center text-[1.8rem]'>No items available</span>";
             }
                 ?>
-                </tbody>
-            </table>
+            </tbody>
+        </table>
     </div>
 
     <div class="p-4 w-[36rem]  bg-[#BAA071] rounded-[0.8rem] ]">
@@ -65,17 +65,20 @@ $user = mysqli_fetch_assoc($result);
                 <div class="flex items-center gap-[1rem]">
 
                     <label class="w-[8rem] p-1"><b>Name</b></label>
-                    <input type="text" id="qty" class="qty rounded-[0.5rem]" placeholder="Enter Name of Customer" name="name" value="<?php echo $user['cname'] ?>" />
+                    <input type="text" id="qty" class="qty rounded-[0.5rem]" placeholder="Enter Name of Customer"
+                        name="name" value="<?php echo $user['cname'] ?>" />
                 </div>
                 <div class="flex items-center gap-[1rem]">
 
                     <label class="w-[8rem] p-1"><b>Phone No</b></label>
-                    <input type="tel" id="qty" class="qty rounded-[0.5rem]" placeholder="Enter Phone No" name="phoneno" value="<?php echo $user['contact'] ?>">
+                    <input type="tel" id="qty" class="qty rounded-[0.5rem]" placeholder="Enter Phone No" name="phoneno"
+                        value="<?php echo $user['contact'] ?>">
                 </div>
                 <div class="flex items-center gap-[1rem]">
 
                     <label class="w-[8rem] p-1"><b>Address</b></label>
-                    <input type="text" id="qty" class="qty rounded-[0.5rem]" placeholder="Enter Destination Address" name="address" value="<?php echo $user['address'] ?>">
+                    <input type="text" id="qty" class="qty rounded-[0.5rem]" placeholder="Enter Destination Address"
+                        name="address" value="<?php echo $user['address'] ?>">
                 </div>
 
                 <!-- <div class="flex items-center gap-[1rem]">
@@ -95,10 +98,12 @@ $user = mysqli_fetch_assoc($result);
                     <input type="hidden" name="cid" value="<?php echo $user['customerid']; ?>">
                 </span>
                 <span class="flex flex-col gap-[1.2rem] items-center mt-[1.4rem]">
-                    <a href="../food.php" class="w-[30rem] bg-[#EDE0C8] text-center rounded-[0.6rem] text-[black] cursor-pointer p-2">Continue
+                    <a href="../food.php"
+                        class="w-[30rem] bg-[#EDE0C8] text-center rounded-[0.6rem] text-[black] cursor-pointer p-2">Continue
                         Buying</a>
-                    <button type="submit" class="w-[30rem] bg-[#EDE0C8] text-center rounded-[0.6rem] text-[black] cursor-pointer p-2">Check
-                        Out</button>
+                    <button type="submit"
+                        class="w-[30rem] bg-[#EDE0C8] text-center rounded-[0.6rem] text-[black] cursor-pointer p-2">Place
+                        Order</button>
                 </span>
             </form>
         </span>

@@ -5,13 +5,12 @@ session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $phoneno = $_POST['name'];
-    $address = $_POST['name'];
+    $address = $_POST['address'];
     $total = $_POST['total'];
     $cid = $_POST['cid'];
-    $dt = date("d M, Y");
     $order_status = 0;
 
-    $query = "INSERT INTO `food_order`(`customerid`, `name`, `phoneno`, `address`, `order_date`,  `total_amt`,  `order_status`) VALUES ('$cid','$name','$phoneno','$address','$dt','$total','$order_status')";
+    $query = "INSERT INTO `food_order`(`customerid`, `name`, `phoneno`, `address`, `order_date`,  `total_amt`,  `order_status`) VALUES ('$cid','$name','$phoneno','$address',current_timestamp(),'$total','$order_status')";
 
     $insert_query = mysqli_query($connection, $query);
 

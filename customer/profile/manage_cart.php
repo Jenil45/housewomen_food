@@ -16,13 +16,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // add new item in cart
             $count = count($_SESSION['cart']);
-            $_SESSION['cart'][$count] = array('foodid' => $_POST['foodid'], 'foodname' => $_POST['foodname'], 'price' => $_POST['amount'], 'qty' => $_POST['quantity']);
             print_r($_SESSION['cart']);
+            $_SESSION['cart'][$count] = array('foodid' => $_POST['foodid'], 'kid' => $_POST['kitchenid'], 'foodname' => $_POST['foodname'], 'price' => $_POST['amount'], 'qty' => $_POST['quantity']);
+            // print_r($_SESSION['cart']);
+            header('location:../');
         } else {
 
             // add first item in cart
-            $_SESSION['cart'][0] = array('foodid' => $_POST['foodid'], 'foodname' => $_POST['foodname'], 'price' => $_POST['amount'], 'qty' => $_POST['quantity']);
-            print_r($_SESSION['cart']);
+            $_SESSION['cart'][0] = array('foodid' => $_POST['foodid'], 'kid' => $_POST['kitchenid'], 'foodname' => $_POST['foodname'], 'price' => $_POST['amount'], 'qty' => $_POST['quantity']);
+            // print_r($_SESSION['cart']);
+            header('location:../');
         }
     }
 

@@ -28,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $_SESSION['loggedIn'] = true;
                 $_SESSION['email'] = $email;
                 $_SESSION['role'] = $role;
+                $_SESSION['userid'] = $row['userid'];
                 if ($role == 0) {
                     header('location:./customer');
                 } else {

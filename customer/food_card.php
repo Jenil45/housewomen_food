@@ -26,9 +26,7 @@
             </span>
         </div>
         <div class="flex items-center justify-between ">
-            <!-- <button class="btn bg-[transparent] hover:bg-[green] rounded-[8px] p-2 border hover:text-[white] border-[2px]">
-                Order Now
-            </button> -->
+
             <button onclick="document.getElementById('id03').style.display='block'" class="w-[10rem] mt-[1rem] m-auto p-3 rounded">Order
                 Now</button>
 
@@ -63,11 +61,7 @@
                                 <label class="w-[8rem] p-1"><b>Punjabi Dish</b></label>
                                 <input type="text" id="" class="rounded-[0.5rem]" placeholder="" value="Punjabi Dish" name="foodname" hidden>
                             </div>
-                            <!-- <div class="flex items-center gap-[1rem]"> -->
-
-                            <!-- <label class="w-[8rem] p-1"><b>Food Name</b></label> -->
                             <input type="number" id="" class="rounded-[0.5rem]" placeholder="" value=1 name="foodid" hidden>
-                            <!-- </div> -->
 
                             <div class="flex items-center gap-[1rem]">
 
@@ -120,11 +114,5 @@
                 set()
             }, 500)
         </script>
-
-        <!-- // order now section -->
-
-
-
-
     </div>
 </div>

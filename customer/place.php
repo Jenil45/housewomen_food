@@ -9,14 +9,22 @@ include './_navbar.php';
         incredible food, Zomato covers it all. Explore menus, and millions of restaurant photos and reviews from users
         just like you, to find your next great meal.</h1>
     <div class="flex items-center gap-[2rem] flex-wrap mt-[2rem] w-[75rem] m-auto justify-center">
-        <?php include './place_card.php'; ?>
-        <?php include './place_card.php'; ?>
-        <?php include './place_card.php'; ?>
-        <?php include './place_card.php'; ?>
-        <?php include './place_card.php'; ?>
-        <?php include './place_card.php'; ?>
-        <?php include './place_card.php'; ?>
-        <?php include './place_card.php'; ?>
-        <?php include './place_card.php'; ?>
+
+        <?php
+        $sql = "SELECT COUNT(kitchenid), city FROM kitchen GROUP BY city ";
+        $result = mysqli_query($connection, $sql);
+        // var_dump();
+        while ($row = mysqli_fetch_assoc($result)) {
+
+            // while ($) {
+            include './place_card.php';
+        }
+        // 
+        ?>
+
+        <?php
+        // }
+        // 
+        ?>
     </div>
 </div>

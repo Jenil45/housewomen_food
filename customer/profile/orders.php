@@ -3,16 +3,15 @@ include './sidebar.php';
 ?>
 
 <link rel="stylesheet" href="../css/style1.css">
-<div
-    class="card bg-[white] shadow-xl p-2 rounded-[1.1rem] border w-[50rem] m-auto mt-[1rem]   flex flex-col gap-[1rem]">
+<div class="card bg-[white] shadow-xl p-2 rounded-[1.1rem] border w-[50rem] m-auto mt-[1rem]   flex flex-col gap-[1rem]">
     <h1 class="font-bold text-[1.6rem]">Order Details</h1>
     <div class="flex justify-between items-center border-0 border-b-[1px] p-2 border-[gray]">
         <div class="flex items-center justify-center gap-[0.6rem]">
             <img src="../../images/svg/logo.svg" class="w-[4rem] rounded-full border-2 p-4 " alt="">
-            <span class="flex flex-col">
+            <!-- <span class="flex flex-col">
                 <span class="text-[1.4rem]">Kitchen Rupa</span>
                 <span>City</span>
-            </span>
+            </span> -->
         </div>
     </div>
     <h1 class="font-bold text-[1.6rem]">

@@ -1,43 +1,52 @@
 <?php
-include './sidebar.php';
-?>
+include '../database/_dbconnect.php';
 
-<form class="modal-content animate flex-[1] mt-[5rem] mx-auto w-[40rem] h-[30rem] flex flex-col  rounded-[1.2rem] " action="./profile/manage_cart.php" method="post">
-    <div class="imgcontainer flex-end">
-        <span onclick="document.getElementById('id4').style.display='none'" class="close" title="Close Modal">&times;</span>
-    </div>
-    <div class="flex items-center justify-center">
+if (isset($_FILES['food_upload'])) {
+  $errors = array();
+  $file_name = $_FILES['food_upload']['name'];
+  $file_size = $_FILES['food_upload']['size'];
+  $file_tmp = $_FILES['food_upload']['tmp_name'];
+  $file_type = $_FILES['food_upload']['type'];
+  $file_ext = end(explode('.', $file_name));
+  $extensions = array("jpeg", "jpg", "png");
 
-        <div class="imgcontainer  flex flex-col items-center mt-[5rem] gap-[2rem]">
-            <div class="container mt-[2rem] flex flex-col gap-[1.2rem]">
+  if (in_array($file_ext, $extensions) === false) {
+    $errors[] = "This extension file is not valid";
+  }
+  if ($file_size > 20097152) {
+    $errors[] = "File size must be less than 20mb";
+  }
+  $new_name = time() . "-" . basename($file_name);
+  $target =  "../images/food/" . $new_name;
+  $d_name = $new_name;
 
+  if (empty($errors) == true) {
+    move_uploaded_file($file_tmp, $target);
+  } else {
+    print_r($errors);
+    die("Error..");
+  }
+}
+session_start();
+$food_name = mysqli_real_escape_string($connection, $_POST['food_name']);
+$desc = mysqli_real_escape_string($connection, $_POST['description']);
+$price = mysqli_real_escape_string($connection, $_POST['price']);
+$dt = date("d M, Y");
+$uid = $_SESSION['userid'];
 
-                <div class="flex items-center gap-[1rem]">
-                    <label class="w-[8rem] flex justify-start p-1"><b>Food Name</b></label>
-                    <input type="text" id="qty" class="qty rounded-[0.5rem] w-[22rem]" placeholder="Enter Quantity" name="food_name" />
-                </div>
-                <div class="flex items-center gap-[1rem]">
-                    <label class="w-[8rem] flex justify-start p-1"><b>Description</b></label>
-                    <textarea type="text" id="qty" class="qty rounded-[0.5rem] w-[22rem]" placeholder="Enter Quantity" name="description"></textarea>
-                </div>
-                <div class="flex items-center gap-[1rem]">
-                    <label class="w-[8rem] flex justify-start p-1"><b>Food Price</b></label>
-                    <input type="text" id="qty" class="qty rounded-[0.5rem] w-[22rem]" placeholder="Enter Quantity" name="food_price" />
-                </div>
-                <div class="flex items-center gap-[1rem]">
-                    <label class="w-[8rem] flex justify-start p-1"><b>Food Image</b></label>
-                    <!-- <input type="image" width="48" height="48" class="qty rounded-[0.5rem] w-[16rem]"
-                                    placeholder="Enter Quantity" name="food_name" /> -->
-                    <input type="file" class="qty rounded-[0.5rem] w-[22rem] border p-1" id="img" name="img" accept="image/*">
-                </div>
+$fetch = "SELECT * FROM `kitchen` WHERE userid=$uid";
+$result_fetch = mysqli_query($connection, $fetch);
 
-                <button type="submit" name="add_to_cart" class="bg-[green] w-[10rem] mx-auto  rounded text-[white] p-2 mt-[1rem]">
-                    Update Food
-                </button>
-            </div>
-        </div>
+while ($row = mysqli_fetch_assoc($result_fetch)) {
+  $kid = $row['kitchenid'];
 
+  $sql = "INSERT INTO `food` (`kitchenid`,`food_name`,`price`,`image_upload`,`description`,`date`) VALUES('$kid','$food_name','$price','$d_name','$desc', current_timestamp());";
 
-    </div>
+  //concatinating the two sql commands
+  // $sql .= "UPDATE CATEOGRY SET post = post +1 WHERE `category_id` = '$category'";
 
-</form>
+  //for running the multiple query 
+  if (mysqli_multi_query($connection, $sql)) {
+    header("Location:./menu.php");
+  }
+}

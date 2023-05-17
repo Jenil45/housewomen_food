@@ -30,14 +30,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $created = true;
 
                 if ($role == 0) {
-                    $sql1 = "INSERT INTO `user_customer` (`cname`, `cemail`,`date`) VALUES ('$name', '$email' ,   current_timestamp());";
 
-                    $result1 = mysqli_query($connection, $sql1);
-                    header('location:./customer');
+                    $fetch = "SELECT * from user ";
+                    $result_fetch = mysqli_query($connection, $fetch);
+                    // $userid;
+                    while ($row = mysqli_fetch_assoc($result_fetch)) {
+                        if ($row['email'] == $email) {
+
+                            $userid = $row['userid'];
+
+                            $sql1 = "INSERT INTO `user_customer` (`cname`, `cemail`,`userid`,`date`) VALUES ('$name', '$email' , $userid , current_timestamp());";
+
+                            $result1 = mysqli_query($connection, $sql1);
+                            header('location:./customer');
+                        }
+                    }
                 } else {
-                    $sql1 = "INSERT INTO `kitchen` (`email`, `owner_name`,`date`) VALUES ('$email', '$name' ,   current_timestamp());";
-                    $result1 = mysqli_query($connection, $sql1);
-                    header('location:./business');
+
+                    $fetch1 = "SELECT * from `user`";
+                    $result_fetch = mysqli_query($connection, $fetch1);
+                    var_dump($result_fetch);
+
+                    // $userid;
+                    while ($row = mysqli_fetch_assoc($result_fetch)) {
+                        if ($row['email'] == $email) {
+                            $userid = $row['userid'];
+
+                            $sql1 = "INSERT INTO `kitchen` (`email`, `owner_name`,`userid`,`date`) VALUES ('$email', '$name' , $userid ,  current_timestamp());";
+                            $result1 = mysqli_query($connection, $sql1);
+                            header('location:./business');
+                        }
+                    }
                 }
             } else {
                 echo mysqli_error($connection);

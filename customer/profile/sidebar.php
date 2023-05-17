@@ -1,5 +1,5 @@
 <?php
-
+include '../../database/_dbconnect.php';
 session_start();
 $role = $_SESSION['role'];
 $loggedin = $_SESSION['loggedIn'];

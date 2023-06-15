@@ -59,6 +59,13 @@ if (!isset($_SESSION['loggedIn']) && $loggedin == false) {
                 <div class="flex flex-col">
                     <ul class="flex flex-col items-center justify-center gap-[0.2rem] mt-[1rem]">
 
+                        <a href="../" class="h-[3rem] w-full border-0 hover:text-[black] gap-[0.8rem] border-l-[6px] border-[#BAA071] py-[0.4rem] hover:bg-[#EDE0C8]    hover:border-l-[#5f5a50] flex items-center justify-center text-center text-gray-100 text-bold">
+                            <div class="flex-[1] flex justify-end ">
+                                <img src="../../images/svg/home.svg" class=" w-[2rem] bg-[white] rounded-full p-1" alt="">
+                            </div>
+                            <span class="flex-[2] flex justify-start">Home</span>
+                        </a>
+
                         <a href="./" class="h-[3rem] w-full border-0 hover:text-[black] gap-[0.8rem] border-l-[6px] border-[#BAA071] py-[0.4rem] hover:bg-[#EDE0C8]    hover:border-l-[#5f5a50] flex items-center justify-center text-center text-gray-100 text-bold">
                             <div class="flex-[1] flex justify-end ">
                                 <img src="../../images/svg/user.svg" class=" w-[2rem] bg-[white] rounded-full p-1" alt="">
@@ -86,7 +93,7 @@ if (!isset($_SESSION['loggedIn']) && $loggedin == false) {
                             </div>
                             <span class="flex-[2] flex justify-start">My Cart</span>
                         </a>
-                        <a href="./" class="h-[3rem] w-full border-0 hover:text-[black] gap-[0.8rem] border-l-[6px] border-[#BAA071] py-[0.4rem] hover:bg-[#EDE0C8]    hover:border-l-[#5f5a50] flex items-center justify-center text-center text-gray-100 text-bold">
+                        <a href="./review.php" class="h-[3rem] w-full border-0 hover:text-[black] gap-[0.8rem] border-l-[6px] border-[#BAA071] py-[0.4rem] hover:bg-[#EDE0C8]    hover:border-l-[#5f5a50] flex items-center justify-center text-center text-gray-100 text-bold">
                             <div class="flex-[1] flex justify-end ">
                                 <img src="../../images/svg/review.svg" class=" w-[2rem] bg-[white] rounded-full p-1" alt="">
                             </div>

@@ -89,7 +89,11 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
                                         <label class="w-[12rem] p-1">
                                             <b>Dish Name : <?php echo $row['food_name'] ?></b></label>
                                         <input type="text" id="" class="rounded-[0.5rem]" placeholder=""
-                                            value="Punjabi Dish" name="foodname" hidden>
+                                            value="<?php echo $row['food_name'] ?>" name="foodname" hidden>
+                                        <input type="number" id="" class="rounded-[0.5rem]" placeholder=""
+                                            value=<?php echo $row['foodid'] ?> name="foodid" hidden>
+                                        <input type="number" id="" class="rounded-[0.5rem]" placeholder=""
+                                            value=<?php echo $kid ?> name="kitchenid" hidden>
                                     </div>
                                     <input type="number" id="" class="rounded-[0.5rem]" placeholder="" value=1
                                         name="foodid" hidden>

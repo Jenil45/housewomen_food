@@ -4,13 +4,14 @@ include '../../database/_dbconnect.php';
 session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
-    $phoneno = $_POST['name'];
+    $phoneno = $_POST['phoneno'];
     $address = $_POST['address'];
     $total = $_POST['total'];
     $cid = $_POST['cid'];
     $order_status = 0;
+    $kid = $_SESSION['cart'][0]['kid'];
 
-    $query = "INSERT INTO `food_order`(`customerid`, `name`, `phoneno`, `address`, `order_date`,  `total_amt`,  `order_status`) VALUES ('$cid','$name','$phoneno','$address',current_timestamp(),'$total','$order_status')";
+    $query = "INSERT INTO `food_order`(`customerid`, `name`, `phoneno`, `address`, `order_date`,  `total_amt`, `kitchenid`, `order_status`) VALUES ('$cid','$name','$phoneno','$address',current_timestamp(),'$total','$kid','$order_status')";
 
     $insert_query = mysqli_query($connection, $query);
 

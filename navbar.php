@@ -20,7 +20,7 @@
             <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
                 <a href="./index.php" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
                     <img src="./images/svg/logo.svg" class="w-[4rem]" alt="">
-                    <span class="ml-3 text-xl">Tailblocks</span>
+                    <span class="ml-3 text-xl">Mommy's Kitchen</span>
                 </a>
                 <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
                     <a href="./" class="mr-5 hover:text-gray-900">
